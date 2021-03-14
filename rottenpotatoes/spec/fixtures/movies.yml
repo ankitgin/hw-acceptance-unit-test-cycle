@@ -1,0 +1,14 @@
+mymovie_1:
+  title: mymovie_1
+  director: my_director
+
+mymovie_2:
+  title: mymovie_2
+  director: my_director
+  
+mymovie_3:
+  title: mymovie_3
+  director: director_3
+  
+mymovie_4:
+  title: mymovie_4

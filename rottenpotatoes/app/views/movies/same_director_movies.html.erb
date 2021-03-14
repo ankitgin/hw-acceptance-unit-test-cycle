@@ -1,14 +1,10 @@
-<!--  This file is app/views/movies/index.html.erb -->
-<h2>All Movies</h2>
-
-<%#  Part 2: Start here... %>
+<h2>Movies of director <%=@director%></h2>
 
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
       <th>Movie Title</th>
       <th>Rating</th>
-      <th>Director</th>
       <th>Release Date</th>
       <th>More Info</th>
     </tr>
@@ -23,9 +19,6 @@
           <%= movie.rating %>
         </td>
         <td>
-          <%= movie.director %>
-        </td>
-        <td>
           <%= movie.release_date %>
         </td>
         <td>
@@ -35,4 +28,6 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new movie', new_movie_path, :class => 'btn btn-primary' %>
+
+<%= link_to 'Back', movie_path(@movie_id), :class => 'btn btn-primary' %>
+<%= link_to 'All movies', movies_path, :class => 'btn btn-warning' %>
