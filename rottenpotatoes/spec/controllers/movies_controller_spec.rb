@@ -71,7 +71,7 @@ describe MoviesController do
     
     describe 'Testing: Index method' do
         it 'It should get movies' do
-            expect(Movie).to receive(:all).and_return([movies(:mymovie_1), movies(:mymovie_2)])
+            expect(Movie).to receive(:all_ratings).and_return([movies(:mymovie_1), movies(:mymovie_2)])
             get :index
             response.response_code.should == 200
         end

@@ -1,0 +1,29 @@
+
+MoviesController
+  Checking for movies with same director
+    should not find movies - my sad path
+    should find movies - expected - happy path
+  Testing: Create Method
+    It should create the movie
+  Testing: Update Method
+    It should update movie
+  Testing: Edit method
+    It should edit movie
+  Testing: Show method
+    It should show movie
+  Testing: Destroy method
+    It hould destroy movie
+  Testing: New method
+    It should open page for new movie
+  Testing: Index method
+    It should get movies
+
+Movie
+  returns similar movies
+
+1 deprecation warning total
+
+Finished in 0.08051 seconds (files took 1.51 seconds to load)
+10 examples, 0 failures
+
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 64 / 68 LOC (94.12%) covered.

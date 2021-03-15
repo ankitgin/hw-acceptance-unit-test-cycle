@@ -7,7 +7,39 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    #debugger
+    
+    if request.fullpath == "/"
+      reset_session
+    end
+    
+    @all_ratings = Movie.all_ratings
+    @ratings_to_show = []
+    @selected_column = session[:sort_column]
+    
+
+    if params[:ratings].present?
+      session[:ratings] = params[:ratings]
+      @ratings_to_show = session[:ratings].keys()
+    elsif params[:home].present?
+      session[:ratings] = nil
+      @ratings_to_show = []
+    end
+      
+  
+    if params[:sort_column].present?
+      session[:sort_column] = params[:sort_column]
+      @selected_column = session[:sort_column]
+    end
+    
+    if params[:home] == nil && session[:ratings] !=nil
+      @ratings_to_show = session[:ratings].keys()
+      @selected_column = session[:sort_column]
+    end
+      
+      
+    @movies = Movie.sorted_and_rated(@ratings_to_show, @selected_column)
+    
   end
 
   def new
